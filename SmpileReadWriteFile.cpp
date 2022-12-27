@@ -1,4 +1,4 @@
-﻿#include <iostream>
+
 #include <iostream>     
 #include <fstream>  
 #include <string>
@@ -15,24 +15,24 @@ Telegram  : https://t.me/ppphp
 int main()
 {
 
-    SetConsoleTitleA("SmpileReadWriteFile");
-  
-    ofstream Write; 
-    ifstream Read; 
+
+
+    ofstream Write;
+    ifstream Read;
     fstream ReadWrite;
-      
-    char key[] = { 200 };  
-    Read.open("key.tmp");
-    if(Read.fail())
+
+    char key[] = { 200 };
+    Read.open("key.tmp"); // create a file
+    if (Read.fail())
     {
         cout << "Enter Your Key : ";
         cin >> key;
         Write.open("key.tmp");
         Write << key;
         Write.close();
-      
+
     }
-    else 
+    else
     {
 
         Read.close();
@@ -43,18 +43,19 @@ int main()
     key;
     Read >> key;
     system("cls");
-    cout << "old key : "<< key << endl;
+    cout << "old key : " << key << endl;
     Read.close();
 
-/*
-    if (Read.is_open()) // for real all line 
-    {
-        while (!Read.eof())
+    // for read all line
+
+        if (Read.is_open()) 
         {
-            Read >> output;
-            cout << output << endl;
-        }
-*/
+            while (!Read.eof()) 
+            {
+                Read >> key; 
+                cout << key << endl;
+            }
+   
 
     system("pause");
 }
