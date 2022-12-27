@@ -21,8 +21,8 @@ int main()
     ifstream Read;
     fstream ReadWrite;
 
-    char key[] = { 200 };
-    Read.open("key.tmp"); // create a file
+    char key[] = { 200 }; // size
+    Read.open("key.tmp"); // create
     if (Read.fail()) // for checked
     {
 // ofstream Write
