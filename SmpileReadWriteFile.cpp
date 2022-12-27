@@ -23,8 +23,9 @@ int main()
 
     char key[] = { 200 };
     Read.open("key.tmp"); // create a file
-    if (Read.fail())
+    if (Read.fail()) // for checked
     {
+// ofstream Write
         cout << "Enter Your Key : ";
         cin >> key;
         Write.open("key.tmp");
@@ -38,7 +39,7 @@ int main()
         Read.close();
 
     }
-
+//ifstream Read
     Read.open("key.tmp");
     key;
     Read >> key;
@@ -46,7 +47,7 @@ int main()
     cout << "old key : " << key << endl;
     Read.close();
 
-    // for read all line
+//for read all line
 
         if (Read.is_open()) 
         {
@@ -55,7 +56,16 @@ int main()
                 Read >> key; 
                 cout << key << endl;
             }
-   
-
+   //fstream ReadWrite
+ReadWrite.open("n1.txt", ios::out); 
+    ReadWrite << "BruceLee"<<endl ;
+    ReadWrite << "13"<<endl  ;
+    ReadWrite.close();
+    ReadWrite.open("n1.txt", ios::in);
+    string name[2];
+    ReadWrite>>name[0];
+    ReadWrite>>name[1];
+    cout << name[0]<< name[1]<<endl;
+    ReadWrite.close();
     system("pause");
 }
