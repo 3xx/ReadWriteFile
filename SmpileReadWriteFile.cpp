@@ -46,6 +46,15 @@ int main()
     cout << "old key : "<< key << endl;
     Read.close();
 
+/*
+    if (Read.is_open()) // for real all line 
+    {
+        while (!Read.eof())
+        {
+            Read >> output;
+            cout << output << endl;
+        }
+*/
 
     system("pause");
 }
